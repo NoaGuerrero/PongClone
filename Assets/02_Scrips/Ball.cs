@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
     [SerializeField] private float initialVelocity = 4f;
     [SerializeField] private float velocityMultiplier = 1.1f;
+    [SerializeField] private AudioClip bounceSound;  
+
     private Rigidbody2D ballRb;
+    private AudioSource audioSource;                
 
     void Start()
     {
         ballRb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();   
         Launch();
     }
 
@@ -23,13 +25,19 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
+        if (audioSource != null && bounceSound != null)
+        {
+            audioSource.PlayOneShot(bounceSound);
+        }
+
+       
         if (collision.gameObject.CompareTag("Paddle"))
         {
             ballRb.velocity *= velocityMultiplier;
         }
     }
 
-   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Goal1"))
