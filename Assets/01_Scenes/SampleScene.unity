@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  isPaddle1: 0
+  isPaddle1: 1
 --- !u!61 &1633079863
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1554,7 +1554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  isPaddle1: 1
+  isPaddle1: 0
 --- !u!61 &1876442295
 BoxCollider2D:
   m_ObjectHideFlags: 0
