@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; // Si usas TextMeshPro; si usas Text normal, cambia por using UnityEngine.UI;
+using TMPro; 
 
 public class HighScoreDisplay : MonoBehaviour
 {
